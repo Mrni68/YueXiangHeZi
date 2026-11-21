@@ -63,6 +63,12 @@
     }
     .link-box:active { opacity: 0.85; }
 
+    .list-item { padding: 12px 0; border-bottom: 1px solid var(--line); }
+    .list-item:last-child { border-bottom: none; }
+    .list-item a { color: var(--accent-text); font-weight: bold; text-decoration: none; }
+    .list-item .placeholder-title { color: var(--ink); font-weight: bold; }
+    .list-item .small-desc { font-size: 13px; color: var(--sub); margin-top: 4px; }
+
     .notice {
       background: var(--card);
       border: 1px solid var(--line);
@@ -99,18 +105,18 @@
       <a class="link-box" href="****">点击进入资源合集</a>
     </section>
 
-    <!-- 电子名片（总入口） -->
-    <section class="card">
-      <h2>电子名片（总入口）</h2>
-      <p class="desc">所有入口都在这里。</p>
-      <a class="link-box" href="https://link3.cc/yxh9">点击打开电子名片</a>
-    </section>
-
     <!-- 每日更新 · 悦享盒子5266 -->
     <section class="card">
       <h2>每日更新 · 悦享盒子5266</h2>
       <p class="desc">定期更新资源链接，进入文档查看资源可能需要登录账号。</p>
-      <a class="link-box" href="https://my.feishu.cn/docx/QyurdDF8EoTi5IxGXJdcZreRngg?from=from_copylink">点击打开 悦享盒子5266 </a>
+      <a class="link-box" href="https://my.feishu.cn/docx/QyurdDF8EoTi5IxGXJdcZreRngg?from=from_copylink">点击打开 5266 更新文档</a>
+    </section>
+
+    <!-- 电子名片（总入口） -->
+    <section class="card">
+      <h2>电子名片（总入口）</h2>
+      <p class="desc">所有入口都在这，链接换了只改这一处。</p>
+      <a class="link-box" href="https://link3.cc/yxh9">点击打开电子名片</a>
     </section>
 
     <!-- 中转页 · 宝盒开启中 -->
@@ -131,5 +137,31 @@
     </section>
 
   </div>
+
+<!--
+  热门学习资源清单（暂未启用，以后恢复时取消本段注释，并在页面中加回 <section id="linkListWrap">）
+  const links = [
+    { title: "学前教育 · 幼儿园教案与绘本书单", desc: "活动教案、分级绘本、幼小衔接练习", url: "****" },
+    { title: "小学 · 口算、写话与语数英同步资料", desc: "识字口算、看图写话、单元卷与衔接练习", url: "****" },
+    { title: "初中 · 七至九年级各科试卷合集", desc: "同步试卷、中考复习与压轴专题", url: "****" },
+    { title: "高中 · 高一至高三复习资料", desc: "同步讲义、一轮复习、高考真题汇编", url: "****" },
+    { title: "大学与考证 · 课程课件、考证与简历", desc: "大学课程、教资公考、技能证书、简历模板", url: "****" }
+  ];
+  function renderLinks() {
+    const wrap = document.getElementById("linkListWrap");
+    wrap.innerHTML = "";
+    links.forEach(function (item) {
+      const div = document.createElement("div");
+      div.className = "list-item";
+      const linkHtml = item.url === "****"
+        ? '<span class="placeholder-title">' + item.title + "</span>"
+        : '<a href="' + item.url + '" target="_blank" rel="noopener noreferrer">' + item.title + "</a>";
+      div.innerHTML = linkHtml + '<div class="small-desc">' + item.desc + "</div>";
+      wrap.appendChild(div);
+    });
+  }
+  renderLinks();
+-->
+
 </body>
 </html>
